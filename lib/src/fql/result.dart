@@ -28,7 +28,7 @@ class Result {
     } else if (value is Obj) {
       return value.object;
     } else if (key == 'ts') {
-      return DateTime.fromMicrosecondsSinceEpoch(value);
+      return value;
     } else {
       return value;
     }
@@ -97,8 +97,7 @@ class RefResult {
     return Ref(Collection(collection!.id), id);
   }
 
-  factory RefResult.fromJson(Map<String, dynamic> json) =>
-      _$RefResultFromJson(json);
+  factory RefResult.fromJson(Map<String, dynamic> json) => _$RefResultFromJson(json);
 
   Map<String, dynamic> toJson() => _$RefResultToJson(this);
 
@@ -121,8 +120,7 @@ class QueryResult {
 
   QueryResult(this.params, this.expression);
 
-  factory QueryResult.fromJson(Map<String, dynamic> json) =>
-      _$QueryResultFromJson(json);
+  factory QueryResult.fromJson(Map<String, dynamic> json) => _$QueryResultFromJson(json);
 
   Map<String, dynamic> toJson() => _$QueryResultToJson(this);
 
@@ -179,8 +177,7 @@ class FaunaResponse {
     return qr;
   }
 
-  factory FaunaResponse.fromJson(Map<String, dynamic> json) =>
-      _$FaunaResponseFromJson(json);
+  factory FaunaResponse.fromJson(Map<String, dynamic> json) => _$FaunaResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$FaunaResponseToJson(this);
 }
